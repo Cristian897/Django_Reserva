@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charser="uft-8">
+		<title>{% block tittle %} Reserva tu casa {% endblock %}</title>
+		<link rel="stylesheet" href="/media/bootstrap/css/bootstrap.css"> 
+		<!--<link rel="stylesheet" href="/media/bootstrap/css/bootstrap-responsive.css">-->
+		<link rel="stylesheet" href="/media/bootstrap/css/bootstrap.min.css">
+		<script src="/media/js/jquery.js"></script>
+		<script src="/media/bootstrap/js/bootstrap.js"></script>
+		<style type="text/css">
+			body{
+				padding-top: 60px;
+				padding-bottom:  40px;
+			}
+			.sidebar-nav{
+				padding: 9px 0:;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).on('ready',function(){
+				$.ajax({
+					type:"GET",
+					contentType:"application/json; charset=utf-8",
+					dateType:"json",
+					url:"/ws/productos",
+					success:function(response){
+						var i = (response.length-1)-2;
+						for(i;i<=(response.length-1);i++){
+							$('#ReservaNueva').append("<li>"+response[i].fields.nombre+"</li>");
+						}
+					}
+				});
+
+			});
+		</script>
+		<link rel="stylesheet" href="/media/bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/media/css/main.css">
+        <script src="/media/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        {% block scripts %}
+        {% endblock %}
+
+	</head>
+
+	<body>
+
+		<div class="navbar-inverse navbar-fixed-top">
+			<div class = "navbar-header">
+				 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           			 <span class="icon-bar"></span>
+          			 <span class="icon-bar"></span>
+          			 <span class="icon-bar"></span>
+        		  </button>
+
+				<a class="navbar-brand" href="{% url "vista_principal" %}">Reserva de Casas</a>
+				{% if user.is_authenticated %}
+					<p class = "navbar-text pull-right"> Usuario {{user.username}}</p>
+				{% endif %}	
+				<!--<div class="navbar-collapse collapse">-->
+					<ul class="nav navbar-nav navbar-collapse collapse">
+						<li class="active"><a href="{% url "vista_principal" %}"> Inicio </a></li>
+						<li><a href="/reserva/page/1/"> Casas </a></li>
+						<li><a href="{% url "vista_contacto" %}"> Contactanos </a></li>
+						<li><a href="{% url "vista_about" %}"> Acerca de... </a></li>
+						{% if user.is_authenticated %}
+						<li><a href="{% url "vista_logout" %}"> Cerrar Sesion </a></li>
+						{% else %}
+						<li><a href="{% url "vista_login" %}"> Login </a></li>
+						{% endif %}	
+					</ul>
+				<!--</div>-->
+			</div><!--/navbar-inner-->
+		</div><!--/navbar-->
+
+		<div class= "container">
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="hero-unit">
+							{% block content %}
+							{% endblock %}
+						</div>
+					</div>
+					
+
+					<div class = "col-md-3">
+						<div class="well sidebar-nav">
+							<ul class="nav nav-list">
+								<li class="nav-header">Reserva</li>
+								<br><p aling = "justify">
+								Reserva de Casas
+								</p>
+							</ul>
+						</div>
+						<div class="well sidebar-nav">
+							<ul class="nav nav-list" id="ReservaNueva">
+								<li class="nav-header"> Reserva
+								</li>
+								<br><p align ="justify"> Casas </p>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
+			</div>	
+		</div>
+
+
+		<script src="/media/js/vendor/jquery-1.10.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/media/js/vendor/jquery-1.10.1.min.js"></script>')</script>
+
+        <script src="/media/js/vendor/bootstrap.min.js"></script>
+
+        <script src="/media/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block tittle%} Bienvenidos {% endblock%}
+{% block content %}
+ 	<p> Primera pagina</p>
+ 	{% if user.is_authenticated %} 
+ 		<p>Bienvenido {{ user.username }}</p>
+ 		{% if user.get_profile.photo %}
+ 			<img src="/media/{{ user.get_profile.photo }}" width="100px" heigth="100px"/>
+ 		{% endif %}
+ 		<p>Nombre: {{ user.first_name }}</p>
+ 		<p>Apellido: {{ user.last_name }}</p>
+ 		<p>Email: {{ user.email }}</p>
+ 		<p>Teléfono: {{ user.get_profile.telefono }}</p>
+ 	{% endif %}
+ {% endblock %}

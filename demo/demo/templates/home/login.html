@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} LogIn {% endblock %}
+{% block content %}
+<h1>Registrate</h1>
+<form action="." method="POST">
+	{% csrf_token %}
+	{{ mensaje }}
+	{{ form.as_p }}
+	<button class="btn btn-primary" type="submit"> Login </button>	
+	<!--<h5>Registrate <a href="/registro/">aquí</a></h5>-->
+	<h5>Registrate <a href="#">aquí</a></h5>
+	<!--<input type="submit" value="Login">-->
+
+</form>
+
+<!--<h6>Olvidaste tu contraseña<a href="/resetpassword/"> Entra aquí</a> </h6>-->
+<h6>Olvidaste tu contraseña<a href="#"> Entra aquí</a> </h6>
+
+{% endblock %}

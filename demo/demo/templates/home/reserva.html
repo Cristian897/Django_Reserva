@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+{% block title %} Lista de casas {% endblock %}
+{% block content %}
+
+		<h1>Catálogo de casa</h1>
+		<br>
+		{% if user.is_authenticated %}
+		<a class="btn btn-success" href="{% url "vista_agregar_reserva" %}"><li class="glyphicon glyphicon-home"></li> Agregar Casa </a>
+		<br>
+		{% endif %}
+
+		{% if productos %}
+			<br>
+			<table class="table table-hover">
+				<theader>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Sector</th>
+				</theader>	
+			{% for r in productos %}
+				<tbody>
+					<tr>
+					<td>{{r.nombre}}</td>
+					<td>{{r.precio}}</td>
+					<td>{{r.sector}}</td>
+					<td><a class="btn btn-info" href="/reservas/{{r.id}}/"><li class="glyphicon glyphicon-search"></li>  Ver</a></td>
+					{% if user.is_authenticated and user.is_staff %}
+						<td><a class="btn btn-warning" href="/edit/reserva/{{r.id}}"><li class="glyphicon glyphicon-pencil"></li>Editar</a></td>
+					{% endif %}
+					</tr>
+				</tbody>	
+				<!--<p><a href="/reservas/{{r.id}}/">{{r.nombre}}</a></p>-->
+			{% endfor %}
+			</table>
+		{% else %}
+			<h2>No hay casas a reservar</h2>
+		{% endif %}
+
+{% if productos %}
+	<div class="pagination">
+	<ul class="pagination">
+			<li><a href="/reserva/page/1"> << </a></li>
+	{% if productos.has_previous %}
+		<li><a href="/reserva/page/{{ productos.previous_page_number }}/">Prev</a></li>
+	{% else %}
+		<li><a href="#">Prev</a></li>
+	{% endif %}
+			
+	{% if productos.has_next %}
+		<li><a href="/reserva/page/{{ productos.next_page_number }}/">Next</a></li>
+	{% else %}
+		<li><a href="#">Next</a></li>
+	{% endif %}
+		<li><a href="/reserva/page/{{ productos.paginator.num_pages }}/"> >> </a></li>
+	</ul>	
+	</div>
+<h4>Pagina {{productos.number}} de {{productos.paginator.num_pages}}</h4>
+		{% endif %}
+		
+{% endblock %}

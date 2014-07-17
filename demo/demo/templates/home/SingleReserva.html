@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block tittle%} Reserva {{producto.nombre}} {% endblock%}
+
+
+{% block scripts%}
+	<script>
+		$(document).ready(function(){
+			$('#reservar').click(function(){
+				$('#confirmar').submit();
+
+			});
+		});
+	</script>
+
+
+<script type="text/javascript" src="/admin/jsi18n"></script>
+<!--<script type="text/javascript" src="/admin/jsi18n"></script>-->
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/media/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/media/admin/js/admin/DateTimeShortcuts.js"></script>
+
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+<link href="/static/admin/css/widgets.css" rel="stylesheet" type="text/css">
+{{form.media}}	
+{% endblock %}
+
+
+{% block content %}
+
+	<h1>{{ producto.nombre }}</h1>
+	<img src="/media/{{ producto.imagen }}" width="150px" heigth="150px"/>
+	<p>Descripcion: {{ producto.descripcion }}</p> 
+	<p>Sector: {{ producto.sector }}</p> 
+	<p>Direccion: {{ producto.direccion }}</p>  
+	<p>Precio: {{ producto.precio }}$</p>
+	<!--<p>Fecha de disponibilidad: {{ producto.fecha_inicio }}</p>
+	<p>Fecha de Salida: {{ producto.fecha_final }}</p> 	-->
+	<!--{% if producto.stock > 0 %}-->
+	<!--<form action="." method="POST" >
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-primary" type="submit"> Login </button>	
+
+	<input type="submit" value="Login">
+	
+	</form>-->
+
+	
+		<a href="#">Reservar</a>
+	<!--{% endif %}-->
+	<form action="." method="POST" enctype="multipart/form-data">
+		
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn btn-primary" type="submit"> Reservar Casa </button>
+		<a class="btn btn-primary" href="javascript:window.history.go(-1);"><li class="glyphicon glyphicon-chevron-left"> </li>    Regresar a la lista</a>
+	</form>
+
+	
+	<br><br>
+	<!--<a id="reservar" class="btn btn-primary" href="#" type="submit"><li class="glyphicon glyphicon-ok"> </li> Reservar Casa</a>
+	<a class="btn btn-primary" href="javascript:window.history.go(-1);"><li class="glyphicon glyphicon-chevron-left"> </li>    Regresar a la lista</a>-->
+	<br>
+	<!--<a href="/reserva/page/1">Regresar a la lista</a>-->
+	<br>
+	<form  id="confirmar" method="POST" action="/confirmar/reserva/{{ producto.id }}/">
+		{% csrf_token %}
+
+	<input type="hidden" value="{{ producto.id}}">
+	</form>
+	
+{% endblock %}
+

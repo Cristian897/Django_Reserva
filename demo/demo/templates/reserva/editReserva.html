@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Agregar Reserva {% endblock %}
+{% block content %}
+
+<script type="text/javascript" src="/admin/jsi18n"></script>
+<!--<script type="text/javascript" src="/admin/jsi18n"></script>-->
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/media/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/media/admin/js/admin/DateTimeShortcuts.js"></script>
+
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+{{form.media}}
+
+
+		<form action ="." method="POST" enctype="multipart/form-data">
+		<link href="/static/admin/css/widgets.css" rel="stylesheet" type="text/css">
+		<!--<link href="/static/admin/css/forms.css" rel="stylesheet" type="text/css">-->
+		<!--<link href="/media/admin/css/global.css" rel="stylesheet" type="text/css">
+		<link href="/static/admin/css/base.css" rel="stylesheet" type="text/css">-->
+
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button class="btn btn-primary" type="submit"> Guardar </button> 
+				<button class="btn btn-primary" type="reset"> Limpiar </button> 
+				<!--<input type="submit" value="Guardar">
+				<input type="reset" value="limpiar">-->
+		</form>
+<br>
+		{{ informacion }}
+		<br>
+		
+		<a class="btn btn-success"href="/reserva/page/1"><li class="glyphicon glyphicon-arrow-left"> Regresar </li> </a>
+{% endblock %}

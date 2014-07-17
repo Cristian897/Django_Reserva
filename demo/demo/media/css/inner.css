@@ -1,0 +1,151 @@
+/* 
+
+Lighthouse - CSS File
+
+USE THIS STYLE SHEET FOR INNER PAGE
+
+*/
+
+#before-content{ background:url(../images/bg-shadow.gif) bottom #f4f4f4 no-repeat;  display:block; padding:19px 20px 30px 20px; margin-bottom:28px;}
+#before-content h2{ font-size:22px; color:#14bbea; border-bottom:1px solid #d8d8d8; padding-bottom:5px;}
+
+#breadcrumb{padding-bottom:22px; font-size:11px; color:#818181}
+
+/* Pagenavi */
+#pagenavi{vertical-align:middle; clear:both; margin-top:0px; text-align:right; color:#14bbea;}
+#pagenavi a{
+	color:#14bbea;
+	padding:5px 5px;
+}
+#pagenavi a:hover{color:#14bbea; }
+#pagenavi a.current{color:#171717;}
+
+
+/*== display inline==*/
+.inline{margin:0px !important; padding:0px !important; list-style-type:none !important;}
+.inline li{ text-align:right !important; clear:both; width:100% !important; border:0px !important; padding:0 !important; background-image:none!important; line-height:20px;}
+.inline .left{float:left;}
+
+
+/* PORTFOLIO */
+
+/*======= Portfolio 4 Column =======*/
+.pf-type4{list-style-type:none; margin:0px; padding:0px;}
+.pf-type4 li{margin:0px 26px 30px 0px; float:left; width:220px; list-style-type:none;}
+.pf-type4 h2{margin-bottom:3px!important; font-size:14px; color:#171717;}
+.pf-type4 p{ font-size:11px;}
+.pf-img-type4{width:220px; height:119px; margin-bottom:10px; background:url(../images/hover-opacity4.png) no-repeat top left}
+.pf-text-type4{}
+.pf-text-type4 a{}
+.pf-text-type4 a:hover{}
+
+
+/* Property2 */
+.list_properties{ background:#f6f6f6; padding:20px; color:#7e7e7e; line-height:15px; margin-bottom:30px;}
+.list_img{ width:131px; float:left; padding-top:2px;}
+.list_text{ width:420px; margin-left:10px; float:left;}
+.title_property2{border-bottom:1px solid #d8d8d8; padding-bottom:3px; margin-bottom:20px; float:left; width:570px;}
+.title_property2 h2{ font-size:12px; float:left; margin:0px; }
+.title_property2 .star{ float:right; background:url(../images/icon-star.png) no-repeat 0 7px; padding-left:18px; padding-top:5px;}
+
+/* Property Detail */
+#property-detail ul.box_text{ margin:0px!important; padding:0px!important;  }
+#property-detail ul.box_text li{ border:0px!important; border-bottom:1px solid #e9e8e8!important;  padding:4px 0px!important; margin:0px!important; font-size:11px; color:#7e7e7e; list-style-type:none; text-align:left!important; font-weight:normal; display:block; float:left; width:620px; }
+#property-detail ul.box_text .left{ font-weight:bold; width:144px; float:left; }
+#property-detail ul.box_text .right{ width:476px; float:right; }
+
+#property-detail .one_half{ width:290px; margin:0px; }
+#property-detail .one_half ul.box_text li{ float:none; width:auto;}
+#property-detail .one_half{margin-right:40px; float:left; }
+
+
+
+/* Contact Agen */
+#contact-agent ul{ margin:0px; padding:0px;}
+#contact-agent ul li{ padding:0px 14px 0px 0px; }
+#contact-agent input, #contact-agent textarea{ border:1px solid #dcdcdc; background:#f6f6f6;}
+#contact-agent .button{background:#14bbea; font-size:16px;  color:#fff; width:74px; padding:3px 0px; text-align:center; text-decoration:none; border:0px;}
+
+
+/* Contact Information */
+#contact-information{ background:#f6f6f6; padding:20px;}
+#contact-information ul{ margin:0px; padding:0px;}
+#contact-information ul li{ display:inline-block; zoom:1; *display:inline; vertical-align:top;  padding:0px 5px 0px 0px;}
+#contact-information ul li:last-child { padding-right:0px;}
+#contact-information input, #contact-information textarea{ border:1px solid #dcdcdc; background:#fff;}
+#contact-information .button{background:#14bbea; font-size:16px;  color:#fff; width:167px; padding:3px 0px; text-align:center; text-decoration:none; border:0px;}
+
+
+/* Property Detail slideshow  */
+#slideshow_detail {list-style:none; color:#fff}
+#slideshow_detail span {display:none}
+#wrapper {width:620px; margin:0; display:none; }
+#wrapper * {margin:0; padding:0}
+#fullsize {position:relative; width:620px; height:360px; padding:0px 0px 10px 0px; background:url(../images/slider-shadow2.png) bottom no-repeat;}
+#information {position:absolute; bottom:0; width:620px; height:0; background:url(../images/slider-detail/opacity.png) repeat;  color:#fff; overflow:hidden; z-index:200; display:none; }
+#information h3 {padding:4px 8px 3px; font-size:14px; display:none;}
+#information p {padding:0 8px 8px;}
+#image {width:620px}
+#image img {position:absolute; z-index:25; width:auto}
+.imgnav {position:absolute; width:25%; height:306px; cursor:pointer; z-index:50}
+/*#imgprev {left:0; background:url(http://demo.templatesquare.com/html/lighthouse/images/slider-detail/left.gif) left center no-repeat}
+#imgnext {right:0; background:url(http://demo.templatesquare.com/html/lighthouse/images/slider-detail/right.gif) right center no-repeat}
+#imglink {position:absolute; height:306px; width:100%; z-index:100; background-image:url(../images/slider-detail/opacity.png); background-repeat:repeat;}*/
+.linkhover {background:url(http://demo.templatesquare.com/html/lighthouse/images/slider-detail/link.gif) center center no-repeat}
+#thumbnails {margin-top:30px; padding:18px 10px 0px 10px; background-image:url(../images/slider-detail/opacity2.png); background-repeat:repeat; float:left; width:600px;  }
+#slideleft {float:left; width:12px; height:14px; background:url(../images/slider-detail/scroll-left.png) center center no-repeat; margin-top:10px; cursor:pointer;}
+#slideright {float:left; width:12px; height:14px; background:url(../images/slider-detail/scroll-right.png) center center no-repeat; margin-top:10px; cursor:pointer;}
+#slidearea {float:left; position:relative; width:570px; margin:0px 0px 0px 0px;  height:53px; overflow:hidden;}
+#slider {position:absolute; left:0; height:53px}
+#slider img {cursor:pointer; border:1px solid #fff; padding:0px 0px; margin:0px 8px 0px 8px!important; width:45px; height:33px;}
+
+
+
+
+
+/* BLOG */
+.post{margin-bottom:27px;}
+.posttitle{ font-size:16px; margin:0px; padding:0px; line-height:18px;}
+.entry-utility{font-size:10px; color:#b1b1b1; margin-bottom:5px;}
+.entry{padding:0px 0 0 0;}
+
+
+/* CONTACT */
+form{margin:0; padding:0;}
+fieldset{border:0px;}
+#contactform{margin:0 auto; position:relative}
+
+label.sp { width:3px;}
+span.error{color:red;text-align:left; font-size:9px; float:left;}
+#contactform .text-input{
+	background-color:#fff;
+	border:solid 1px #dadada;
+	margin-bottom:5px;
+	width:248px;
+	padding:6px 5px;
+	color:#797979;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+#contactform textarea{
+	background-color:#fff;
+	border:solid 1px #dadada;
+	margin-bottom:7px;
+	padding:6px 5px;
+	height:168px;
+	width:248px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+*+html #contactform textarea{ height:160px;}
+
+#contactform #submit_btn{
+background:#14bbea; font-size:16px;  color:#fff; width:74px; padding:3px 0px; text-align:center; text-decoration:none; border:0px; float:right; margin-right:3px;
+}
+*+html #contactform #submit_btn{ margin-right:0px;}
+#message{ margin-left:0px;}
+#message h2	{}
+#message p{margin:6px 0px; }
+#map iframe{border:solid 1px #e0e0e0; margin-top:20px;}
+.button{ cursor:pointer;}
